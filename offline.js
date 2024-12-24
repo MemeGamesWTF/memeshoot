@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1735038215,
+	"version": 1735041200,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -24,10 +24,9 @@
 		"images/play-sheet0.png",
 		"images/flyingeaglesilhouette-sheet0.png",
 		"images/flyingeaglesilhouette-sheet1.png",
+		"images/particles.png",
 		"media/get er done.m4a",
 		"media/get er done.ogg",
-		"media/sir yes sir.m4a",
-		"media/sir yes sir.ogg",
 		"media/explosion.m4a",
 		"media/explosion.ogg",
 		"media/shoot-6-81136.m4a",
@@ -44,6 +43,8 @@
 		"media/drone 5.ogg",
 		"media/drone 6.m4a",
 		"media/drone 6.ogg",
+		"media/sir yes sir (1).m4a",
+		"media/sir yes sir (1).ogg",
 		"media/drone shoot bgm.m4a",
 		"media/drone shoot bgm.ogg",
 		"icon-16.png",
