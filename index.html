@@ -43,50 +43,21 @@
 			-ms-touch-action: none;
 		}
 	</style>
-
-	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 	<script>
 		const unitySupabase = {
 			Initialization: function () {
-				// const _supabase = supabase.createClient(
-				// 	'https://xonornztsjbdphjtbnyr.supabase.co',
-				// 	'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhvbm9ybnp0c2piZHBoanRibnlyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzA0NTQwNzUsImV4cCI6MjA0NjAzMDA3NX0.yJ6AxoRg0BnXqVodCWKDh-XYPVjBHmfb2QRAShbAdSc'
-				// );
-				// window._supabase = _supabase;
-				console.log('Supabase Instance: ', _supabase);
+				console.log('Supabase Instance');
 			},
 			SendScore: function (score, game) {
-				if (window._supabase) {
-					try {
-						const user_id = window.localStorage.getItem("user_id");
-						const name = window.localStorage.getItem("name");
-						if (typeof user_id === 'string' && user_id.length > 0) {
-							window._supabase
-								.from('scores')
-								.insert({ score: score, user_id: user_id, name: name, game: game })
-								.then(() => {
-									console.log('Score successfully inserted');
-								})
-								.catch((SendScoreError) => {
-									console.log({ SendScoreError });
-								});
-						}
-					} catch (SendScoreError) {
-						console.log({ SendScoreError });
-					}
-				} else {
-					window.parent.postMessage({
-						type: 'SEND_SCORE',
-						score: score,
-						game: game
-					}, "*");
-					console.log('Score message sent to parent');
-				}
+				window.parent.postMessage({
+					type: 'SEND_SCORE',
+					score: score,
+					game: game
+				}, "*");
+				console.log('Score message sent to parent');
 			},
 		};
-		// Make unitySupabase globally available
 		window.unitySupabase = unitySupabase;
-		// Optional: Initialize when the page loads
 		document.addEventListener('DOMContentLoaded', () => {
 			console.log('Document ready, waiting for Unity instance...');
 		});
