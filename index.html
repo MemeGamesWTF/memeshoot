@@ -53,18 +53,22 @@
             SendScore: function (score, game) {
                 if (window._supabase) {
                     try {
-                        window._supabase
-                            .from('scores')
-                            .insert({ score: score, game: game })
-							.then(() => {
-								console.log('Score successfully inserted');
-							})
-							.catch((SendScoreError) => {
-								console.log({ SendScoreError });
-							});
+						const user_id = window.localStorage.getItem("user_id");
+						const name = window.localStorage.getItem("name");
+						if(user_id && name){
+							window._supabase
+								.from('scores')
+								.insert({ score: score,user_id: user_id, name: name, game: game })
+								.then(() => {
+									console.log('Score successfully inserted');
+								})
+								.catch((SendScoreError) => {
+									console.log({ SendScoreError });
+								});
                     } catch (SendScoreError) {
                         console.log({ SendScoreError });
                     }
+					}
                 }
             },
         };
