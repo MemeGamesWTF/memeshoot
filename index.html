@@ -60,7 +60,7 @@
 					try {
 						const user_id = window.localStorage.getItem("user_id");
 						const name = window.localStorage.getItem("name");
-						if (user_id && name) {
+						if (typeof user_id === 'string' && user_id.length > 0) {
 							window._supabase
 								.from('scores')
 								.insert({ score: score, user_id: user_id, name: name, game: game })
