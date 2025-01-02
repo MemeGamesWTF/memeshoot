@@ -1,6 +1,6 @@
 ﻿{
-	"name": "Meme Shoot",
-	"short_name": "Meme Shoot",
+	"name": "DroneShoot",
+	"short_name": "DroneShoot",
 	"start_url": "index.html",
 	"display": "fullscreen",
 	"orientation": "portrait",
