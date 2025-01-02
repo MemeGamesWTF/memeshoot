@@ -48,11 +48,11 @@
 	<script>
 		const unitySupabase = {
 			Initialization: function () {
-				const _supabase = supabase.createClient(
-					'https://xonornztsjbdphjtbnyr.supabase.co',
-					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhvbm9ybnp0c2piZHBoanRibnlyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzA0NTQwNzUsImV4cCI6MjA0NjAzMDA3NX0.yJ6AxoRg0BnXqVodCWKDh-XYPVjBHmfb2QRAShbAdSc'
-				);
-				window._supabase = _supabase;
+				// const _supabase = supabase.createClient(
+				// 	'https://xonornztsjbdphjtbnyr.supabase.co',
+				// 	'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhvbm9ybnp0c2piZHBoanRibnlyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzA0NTQwNzUsImV4cCI6MjA0NjAzMDA3NX0.yJ6AxoRg0BnXqVodCWKDh-XYPVjBHmfb2QRAShbAdSc'
+				// );
+				// window._supabase = _supabase;
 				console.log('Supabase Instance: ', _supabase);
 			},
 			SendScore: function (score, game) {
@@ -79,7 +79,7 @@
 						type: 'SEND_SCORE',
 						score: score,
 						game: game
-					}, 'https://memegames.wtf');
+					}, "*");
 					console.log('Score message sent to parent');
 				}
 			},
